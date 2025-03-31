@@ -6,265 +6,169 @@
     <title>Dia Mundial da Criatividade - Petrópolis</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        function atualizarContagem() {
-            const eventoData = new Date("April 21, 2025 00:00:00").getTime();
-            const agora = new Date().getTime();
-            const diferenca = eventoData - agora;
-    
-            if (diferenca < 0) {
-                document.querySelectorAll(".relogio-valor").forEach(el => {
-                    el.textContent = "00";
-                });
-                return;
-            }
-    
-            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
-    
-            const valores = document.querySelectorAll(".relogio-valor");
-            valores[0].textContent = String(dias).padStart(2, '0');
-            valores[1].textContent = String(horas).padStart(2, '0');
-            valores[2].textContent = String(minutos).padStart(2, '0');
-            valores[3].textContent = String(segundos).padStart(2, '0');
-        }
-        setInterval(atualizarContagem, 1000);
-        window.onload = atualizarContagem;
-    </script>
-    
+    <script src="scripts.js" defer></script>
+    <link rel="icon" href="images/favicon.png" type="image/png">  
 </head>
 <body>
     <header>
-        <img src="images/wciw-blue-logo.png" alt="Marca d'água do evento">
+        <a href="https://wciw.org/" target="_blank" rel="noopener noreferrer">
+            <img src="images/wciw-blue-logo.png" alt="Marca d'água do evento" class="logo-header">
+          </a>
         <h1>Dia Mundial da Criatividade - Petrópolis</h1>
     </header>
     
-    <section id="contagem-regressiva">
-        <div id="mensagem-evento">
-            <h2>Venha participar do nosso evento que acontecerá dos dias 15 até 21 de abril!</h2>
-        </div>
+    <main>
+        <section id="contagem-regressiva">
+            <div id="mensagem-evento">
+                <h2>Venha participar do nosso evento que acontecerá dos dias 15 até 21 de abril!</h2>
+            </div>
+            
+            <div id="relogio-container">
+                <div id="relogio">
+                    <div class="relogio-box">
+                        <span class="relogio-valor">00</span>
+                        <span class="relogio-label">Dias</span>
+                    </div>
+                    <div class="relogio-box">
+                        <span class="relogio-valor">00</span>
+                        <span class="relogio-label">Horas</span>
+                    </div>
+                    <div class="relogio-box">
+                        <span class="relogio-valor">00</span>
+                        <span class="relogio-label">Minutos</span>
+                    </div>
+                    <div class="relogio-box">
+                        <span class="relogio-valor">00</span>
+                        <span class="relogio-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <div id="relogio-container">
-            <div id="relogio">
-                <div class="relogio-box">
-                    <span class="relogio-valor">00</span>
-                    <span class="relogio-label">Dias</span>
-                </div>
-                <div class="relogio-box">
-                    <span class="relogio-valor">00</span>
-                    <span class="relogio-label">Horas</span>
-                </div>
-                <div class="relogio-box">
-                    <span class="relogio-valor">00</span>
-                    <span class="relogio-label">Minutos</span>
-                </div>
-                <div class="relogio-box">
-                    <span class="relogio-valor">00</span>
-                    <span class="relogio-label">Segundos</span>
-                </div>
+        <section id="inscricoes" class="botoes-container">
+            <div class="botao-box">
+                <h2>Seja um voluntário</h2>
+                <a href="https://forms.gle/Uf3bkj15PWo5F93L9" class="botao">Inscreva-se</a>
             </div>
-        </div>
-    </section>
-    
-    <section id="inscricoes" class="botoes-container">
-        <div class="botao-box">
-            <h2>Seja um voluntário</h2>
-            <a href="https://forms.gle/Uf3bkj15PWo5F93L9" class="botao">Inscreva-se</a>
-        </div>
-        <div class="botao-box">
-            <h2>Seja um palestrante</h2>
-            <a href="https://forms.gle/ydHRtZZMRg1UtYRR9" class="botao">Inscreva-se</a>
-        </div>
-        <div class="botao-box">
-            <h2>Seja um Patrocinador</h2>
-            <a href="https://forms.gle/Mu2mTiS5VGuFSP8Q6" class="botao">Inscreva-se</a>
-        </div>
-    </section>
+            <div class="botao-box">
+                <h2>Seja um palestrante</h2>
+                <a href="https://forms.gle/ydHRtZZMRg1UtYRR9" class="botao">Inscreva-se</a>
+            </div>
+            <div class="botao-box">
+                <h2>Seja um Patrocinador</h2>
+                <a href="https://forms.gle/Mu2mTiS5VGuFSP8Q6" class="botao">Inscreva-se</a>
+            </div>
+        </section>
 
-    <section id="carrossel">
-        <div class="carrossel-container">
-            <!-- Slides -->
-            <div class="slide active">
-                <div class="imagem-wrapper">
-                    <img src="passado/abertura-2023-lncc.JPG" alt="Abertura 2023 no lncc">
+        <section id="carrossel">
+            <div class="carrossel-container">
+                <!-- Slides -->
+                <div class="slide active">
+                    <div class="imagem-wrapper">
+                        <img src="passado/abertura-2023-lncc.JPG" alt="Abertura 2023 no lncc">
+                    </div>
+                    <div class="slide-info">
+                        <h3>Abertura das atívidades de 2023</h3>
+                        <p>Abertura no LNCC, Laboratório Nacional de Computação Científica</p>
+                    </div>
                 </div>
-                <div class="slide-info">
-                    <h3>Abertura das atívidades de 2023</h3>
-                    <p>Abertura no LNCC, Laboratório Nacional de Computação Científica</p>
+                
+                <div class="slide">
+                    <div class="imagem-wrapper">
+                        <img src="passado/abertura-2024-serratec.jpg" alt="Abertura 2024 no serratec">
+                    </div>
+                    <div class="slide-info">
+                        <h3>Abertura das atividades de 2024</h3>
+                        <p>Abertura no Serratec</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="slide">
-                <div class="imagem-wrapper">
-                    <img src="passado/abertura-2024-serratec.jpg" alt="Abertura 2024 no serratec">
-                </div>
-                <div class="slide-info">
-                    <h3>Abertura das atividades de 2024</h3>
-                    <p>Abertura no Serratec</p>
-                </div>
-            </div>
 
-            <div class="slide">
-                <div class="imagem-wrapper">
-                    <img src="passado/faeterj-2023.JPG" alt="">
+                <div class="slide">
+                    <div class="imagem-wrapper">
+                        <img src="passado/faeterj-2023.JPG" alt="Atividades na FAETERJ">
+                    </div>
+                    <div class="slide-info">
+                        <h3>Palestras e atividades</h3>
+                        <p>Um dia de aprendizados na FAETERJ petrópolis</p>
+                    </div>
                 </div>
-                <div class="slide-info">
-                    <h3>Palestras e atividades</h3>
-                    <p>Um dia de aprendizados na FAETERJ petrópolis</p>
-                </div>
-            </div>
 
-            <div class="slide">
-                <div class="imagem-wrapper">
-                    <img src="passado/palestra-2023-faeterj.JPG" alt="Descrição da nova imagem">
+                <div class="slide">
+                    <div class="imagem-wrapper">
+                        <img src="passado/palestra-2023-faeterj.JPG" alt="Palestra na FAETERJ">
+                    </div>
+                    <div class="slide-info">
+                        <h3>Palestras e Atividades</h3>
+                        <p>Momentos</p>
+                    </div>
                 </div>
-                <div class="slide-info">
-                    <h3>Palestras e Atividades<h3>
-                    <p>Momentos</p>
+                
+                <!-- Controles -->
+                <button class="controle prev" aria-label="Slide anterior">&#10094;</button>
+                <button class="controle next" aria-label="Próximo slide">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="segmento">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/C5ChOhKCLM0" 
+                        title="Vídeo do Evento" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="texto">
+                <h2>Semana Mundial da Criatividade e Inovação</h2>
+                <p>Somos uma comunidade global dedicada a celebrar todas as formas de criatividade. A criatividade é o que faz o mundo girar. E não precisa acreditar apenas em nossa palavra — olhe ao seu redor: tudo à sua volta é produto de mentes criativas que pensam diferente, desafiam o normal, assumem riscos e aprendem com tentativa e erro. Tudo o que você faz pode ser um ato criativo.</p>
+            </div>
+        </section>
+        
+        <!-- <section class="segmento inverso">
+            <div class="imagem-container">
+                <img src="images/jim.jpeg" alt="Sr. Criatividade - Dr. Friedman" class="segmento-imagem">
+            </div>
+            <div class="texto">
+                <h2>Sr Criatividade</h2>
+                <p>Dr. Friedman é professor de criatividade e empreendedorismo na Universidade de Miami. Antes disso, ele era mais conhecido por criar programas de TV e filmes. Friedman foi fundador e Diretor de Criação do Blind Squirrels Creative Group. Ele já ganhou 65 prêmios Emmy, recebeu múltiplas patentes, escreveu livros e gravou/performou música.</p>
+            </div>
+        </section> -->
+
+        <section class="segmento inverso">
+            <div class="imagem-container">
+                <img src="images/anderson.jpeg" alt="Embaixador Brasileiro da Criatividade" class="segmento-imagem">
+            </div>
+            <div class="texto">
+                <h2>Conheça o Embaixador Brasileiro da Criatividade do WCI</h2>
+                <p>Alfredo Anderson de Freitas Leal, Anderson Leal é um entusiasta da criatividade desde 1999, atuou como diretor da Escola Oficina Criativa por 25 anos onde o trabalho integrava a criatividade ao cerne da abordagem pedagógica. Professor e aprendiz de criatividade, atua como palestrante, levando a Criatidade para outras escolas e famílias.</p>
+                <p>Graduado em Administração de Empresas e Administração Escolar pela UCP (Universidade Católica de Petrópolis), busca promover a inovação e criatividade como um fator essencial para o desenvolvimento educacional. Desde 2021, faz parte do Boteco da Criatividade, um grupo de mentes criativas que se reúne mensalmente para compartilhar ideias, apoiar uns aos outros e promover a cultura da criatividade em todo o Brasil, com a inclusão de membros na Argentina e nos EUA.</p>
+            </div>
+        </section>
+        
+        <section id="patrocinadores">
+            <h2>Nossos Apoiadores</h2>
+            <div class="marcas-container">
+                <div class="marca-item">
+                    <a href="https://www.instagram.com/yesidiomaspetropolis/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/yes.png" alt="YES escola de idiomas" loading="lazy">
+                    </a>
+                </div>
+                <div class="marca-item">
+                    <a href="https://www.instagram.com/giroserra/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/giro-serra.png" alt="WCIW" loading="lazy">
+                    </a>
+                </div>
+                <div class="marca-item">
+                    <img src="images/carretao.PNG" alt="Carretão" loading="lazy">
+                </div>
+                <div class="marca-item">
+                    <img src="images/ayresdamotta.png" alt="Ayres da Motta" loading="lazy">
                 </div>
             </div>
-            
-            <!-- Controles -->
-            <button class="controle prev">&#10094;</button>
-            <button class="controle next">&#10095;</button>
-        </div>
-    </section>
-
-    <section class="segmento">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/C5ChOhKCLM0" 
-                    title="Vídeo do Evento" 
-                    frameborder="0" 
-                    allowfullscreen></iframe>
-        </div>
-        <div class="texto">
-            <h2>Quem somos nós?</h2>
-            <p>Confira os melhores momentos da última edição do Dia Mundial da Criatividade em Petrópolis.</p>
-        </div>
-    </section>
-    
-    <section class="segmento inverso">
-        <div class="imagem"><img src="images/jim.jpeg" alt="Imagem 1"></div>
-        <div class="texto">
-            <h2>Sr Criatividade</h2>
-            <p>Dr. Friedman é professor de criatividade e empreendedorismo na Universidade de Miami. Antes disso, ele era mais conhecido por criar programas de TV e filmes. Friedman foi fundador e Diretor de Criação do Blind Squirrels Creative Group. Ele já ganhou 65 prêmios Emmy, recebeu múltiplas patentes, escreveu livros e gravou/performou música.</p>
-        </div>
-    </section>
-
-    <section class="segmento inverso">
-        <div class="texto">
-            <h2>Título 2</h2>
-            <p>Outro texto relacionado ao evento.</p>
-        </div>
-        <div class="imagem"><img src="images/imagem2.jpg" alt="Imagem 2"></div>
-    </section>
-    
-    <section class="segmento">
-        <div class="imagem"><img src="images/anderson.jpeg" alt="Imagem 3"></div>
-        <div class="texto">
-            <h2>Conheça o Embaixador Brasileiro da Criatividade do WCI</h2>
-            <p>Alfredo Anderson de Freitas Leal, Anderson Leal é um entusiasta da criatividade desde 1999, atuou como diretor da Escola Oficina Criativa por 25 anos onde o trabalho integrava a criatividade ao cerne da abordagem pedagógica. Professor e aprendiz de criatividade, atua como palestrante, levando a Criatidade para outras escolas e famílias.
-                Graduado em Administração de Empresas e Administração Escolar pela UCP (Universidade Católica de Petrópolis), busca promover a inovação e criatividade como um fator essencial para o desenvolvimento educacional. Desde 2021, faz parte do Boteco da Criatividade, um grupo de mentes criativas que se reúne mensalmente para compartilhar ideias, apoiar uns aos outros e promover a cultura da criatividade em todo o Brasil, com a inclusão de membros na Argentina e nos EUA.
-                A partir de 2023, se engajou em iniciativas voltadas para a divulgação e celebração do Dia Mundial da Criatividade e Inovação, contribuindo para elevar o reconhecimento e a importância desses valores na sociedade. Em 2024 foi nomeado o Embaixador Brasileiro da Criatividade da World Creativity & innovation, uma organização da Miami University de Ohio. 
-                Além de sua história profissional, é cristão, pai dedicado, esposo e entusiasta do ciclismo, buscando sempre equilíbrio em todas as áreas.
-                </p>
-        </div>
-    </section>
-    
-        <!-- Seção de Patrocinadores -->
-    <section id="patrocinadores">
-        <h2>Nossos Apoiadores</h2>
-        <div class="marcas-container">
-            <div class="marca-item">
-                <img src="images/yes.png" alt="YES escola de idiomas">
-            </div>
-            <div class="marca-item">
-                <img src="images/giro-serra.png" alt="WCIW">
-            </div>
-            <div class="marca-item">
-                <img src="images/carretao.PNG" alt="Logo Patrocinador 3">
-            </div>
-            <div class="marca-item">
-                <img src="images/ayresdamotta.png" alt="Logo Patrocinador 4">
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Dia Mundial da Criatividade - Petrópolis. Todos os direitos reservados.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.slide');
-            const indicadores = document.querySelectorAll('.indicador');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            let currentIndex = 0;
-            let intervalId;
-            
-            // Inicia o carrossel automático
-            function startCarousel() {
-                intervalId = setInterval(nextSlide, 5000);
-            }
-            
-            // Para o carrossel automático
-            function stopCarousel() {
-                clearInterval(intervalId);
-            }
-            
-            // Mostra slide específico
-            function showSlide(index) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                indicadores.forEach(ind => ind.classList.remove('active'));
-                
-                currentIndex = (index + slides.length) % slides.length;
-                slides[currentIndex].classList.add('active');
-                indicadores[currentIndex].classList.add('active');
-            }
-            
-            // Próximo slide
-            function nextSlide() {
-                showSlide(currentIndex + 1);
-            }
-            
-            // Slide anterior
-            function prevSlide() {
-                showSlide(currentIndex - 1);
-            }
-            
-            // Event listeners
-            nextBtn.addEventListener('click', function() {
-                stopCarousel();
-                nextSlide();
-                startCarousel();
-            });
-            
-            prevBtn.addEventListener('click', function() {
-                stopCarousel();
-                prevSlide();
-                startCarousel();
-            });
-            
-            // Indicadores clicáveis
-            indicadores.forEach((indicador, index) => {
-                indicador.addEventListener('click', function() {
-                    stopCarousel();
-                    showSlide(index);
-                    startCarousel();
-                });
-            });
-            
-            // Inicia o carrossel
-            startCarousel();
-            
-            // Pausa quando o mouse está sobre o carrossel
-            document.querySelector('.carrossel-container').addEventListener('mouseenter', stopCarousel);
-            document.querySelector('.carrossel-container').addEventListener('mouseleave', startCarousel);
-        });
-    </script>
-
 </body>
 </html>
